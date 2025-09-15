@@ -1,0 +1,14 @@
+from django.db import models
+from django.utils import timezone
+
+# Create your models here.
+class Student(models.Model):
+    roll = models.CharField(max_length=100)
+    name = models.CharField(max_length=50)
+    email = models.CharField(max_length=150)
+    address = models.CharField(max_length=100)
+    phone = models.CharField(max_length=10)
+    created_at = models.DateTimeField(default=timezone.now)
+
+    def __str__(self) -> str:
+        return self.roll
